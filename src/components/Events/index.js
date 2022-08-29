@@ -1,102 +1,42 @@
 import {Component} from 'react'
 
-import EventItem from '../EventItem'
-import ActiveEventRegistrationDetails from '../ActiveEventRegistrationDetails'
-
 import './index.css'
 
-const eventsList = [
-  {
-    id: 'f9bb2373-b80e-46b8-8219-f07217b9f3ce',
-    imageUrl:
-      'https://assets.ccbp.in/frontend/react-js/event-canada-dance-festival-img.png',
-    name: 'Canada Dance Festival',
-    location: 'Canada, America',
-    registrationStatus: 'YET_TO_REGISTER',
-  },
-  {
-    id: 'c0040497-e9cb-4873-baa9-ef5b994abfff',
-    imageUrl:
-      'https://assets.ccbp.in/frontend/react-js/events-kathakali-img.png',
-    name: 'Puthanalkkal Kalavela',
-    location: 'Karnataka, India',
-    registrationStatus: 'REGISTERED',
-  },
-  {
-    id: '0037d5e4-4005-4030-987b-ce41b691b92a',
-    imageUrl:
-      'https://assets.ccbp.in/frontend/react-js/events-kuchipudi-img.png',
-    name: 'Nithyopahara',
-    location: 'Kerala, India',
-    registrationStatus: 'REGISTRATIONS_CLOSED',
-  },
-  {
-    id: 'c9ff08cb-610c-4382-9939-78e5e50a72b2',
-    imageUrl:
-      'https://assets.ccbp.in/frontend/react-js/events-bharatanatyam-img.png',
-    name: 'Shivam',
-    location: 'Andhra Pradesh, India',
-    registrationStatus: 'YET_TO_REGISTER',
-  },
-  {
-    id: 'd1153723-5b6e-4628-9a1a-ccd8f84f1273',
-    imageUrl: 'https://assets.ccbp.in/frontend/react-js/events-kolatam-img.png',
-    name: 'Janapada Kolatam',
-    location: 'Tamil Nadu, India',
-    registrationStatus: 'REGISTERED',
-  },
-  {
-    id: '7d6ec013-d0ae-4d84-b776-14b733a9174f',
-    imageUrl:
-      'https://assets.ccbp.in/frontend/react-js/event-colonial-fest-img.png',
-    name: 'Colonial Fest',
-    location: 'Washington, America',
-    registrationStatus: 'REGISTRATIONS_CLOSED',
-  },
-]
-
-class Events extends Component {
-  state = {
-    activeEventId: eventsList[0].id,
-    buttonClicked: false,
-  }
-
-  updateEventId = id => {
-    this.setState({activeEventId: id})
-  }
-
+class Appointments extends Component {
   render() {
-    const {activeEventId, buttonClicked} = this.state
-    const {registrationStatus} = eventsList[activeEventId].registrationStatus
-
     return (
-      <div className="App-container">
-        <div className="Event-container">
-          <h1 className="heading">Events</h1>
-          <ul className="event-list">
-            {eventsList.map(event => (
-              <EventItem
-                key={event.id}
-                eventDetails={event}
-                updateEventId={this.updateEventId}
-              />
-            ))}
-          </ul>
+      <div className="container">
+        <div className="appointment-container">
+          <div className="add-appointment">
+            <h1 className="heading">Add Appointment</h1>
+            <form className="form">
+              <div>
+                <label className="label" htmlFor="title">
+                  TITLE
+                </label>
+                <input type="text" className="input" />
+              </div>
+              <div>
+                <label className="label" htmlFor="date">
+                  DATE
+                </label>
+                <input type="date" className="input" />
+              </div>
+              <button type="button" className="button">
+                ADD
+              </button>
+            </form>
+          </div>
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
+            alt="appointments"
+            className="image"
+          />
         </div>
-        <div className="display-container">
-          {buttonClicked ? (
-            <ActiveEventRegistrationDetails
-              registrationStatus={registrationStatus}
-            />
-          ) : (
-            <p className="description">
-              Click on an event, to view its registration details
-            </p>
-          )}
-        </div>
+        <hr className="hr-line" />
       </div>
     )
   }
 }
 
-export default Events
+export default Appointments
