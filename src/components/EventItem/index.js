@@ -1,23 +1,23 @@
+/* eslint-disable prettier/prettier */
 import './index.css'
 
 const EventItem = props => {
-  const {eventDetails, updateEventId} = props
-  const {id, imageUrl, name, location} = eventDetails
+  const {eventDetails, setActiveEventId, isActive} = props
+  const {imageUrl, name, location, id} = eventDetails
+  const eventImageClassName = isActive ? 'event-image active' : 'event-image'
 
-  const onClickImage = () => {
-    updateEventId(id)
+  const onClickEvent = () => {
+    setActiveEventId(id)
   }
 
   return (
-    <>
-      <li className="events-cards">
-        <button type="button" className="button" onClick={onClickImage}>
-          <img src={imageUrl} alt={name} className="image" />{' '}
-        </button>
-        <h3 className="heading">{name}</h3>
-        <p className="location">{location}</p>
-      </li>
-    </>
+    <li className="event-item">
+      <button type="button" className="event-button" onClick={onClickEvent}>
+        <img src={imageUrl} alt="event" className={eventImageClassName} />
+      </button>
+      <p className="name">{name}</p>
+      <p className="location">{location}</p>
+    </li>
   )
 }
 
