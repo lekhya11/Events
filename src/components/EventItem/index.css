@@ -1,0 +1,30 @@
+.heading {
+  color: #f8fafc;
+  font-family: 'Roboto';
+  font-weight: 700;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.location {
+  color: #f8fafc;
+  font-family: 'Roboto';
+  margin: 0;
+  font-size: small;
+}
+
+.events-cards {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.image {
+  height: 180px;
+  width: 180px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

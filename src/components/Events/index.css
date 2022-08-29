@@ -1,0 +1,27 @@
+.App-container {
+  display: flex;
+  flex-direction: row;
+  height: 150vh;
+}
+.Event-container {
+  background-color: #64748b;
+  padding: 10px;
+  width: 60%;
+}
+.heading {
+  color: #f8fafc;
+  font-family: 'Roboto';
+}
+.event-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.display-container {
+  background-color: #ffffff;
+  padding: 20px;
+}
+.description {
+  color: #475569;
+  font-family: 'Roboto';
+}
